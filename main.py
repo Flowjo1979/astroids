@@ -6,6 +6,8 @@ def main():
     # initialize pygame
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    clock = pygame.time.Clock()
+    dt = 0
     # infinte while loop wat zwart screen zal aanmaken waarbij event.type ervoor zorgt dat de afsluitbutton werkt
     while (True):
         for event in pygame.event.get():
@@ -13,6 +15,9 @@ def main():
                 return
         screen.fill("black")
         pygame.display.flip()
+
+        # begrens de framerate tot 60 FPS
+        dt = clock.tick(60) / 1000
 
 
 
